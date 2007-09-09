@@ -8,7 +8,7 @@
 Summary:	Abstract asynchronous event notification library
 Name:		%{name}
 Version:	%{version}
-Release:	%mkrel 3
+Release:	%mkrel 4
 License:	BSD
 Group:		System/Libraries
 URL:		http://www.monkey.org/~provos/libevent/
@@ -97,5 +97,3 @@ install -m0644 event.3 %{buildroot}%{_mandir}/man3/libevent%{version}.3
 %{_libdir}/*.so
 %{_libdir}/*.a
 %{_mandir}/man3/*
-
-
