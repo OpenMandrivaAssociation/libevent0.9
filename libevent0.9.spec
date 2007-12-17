@@ -13,7 +13,6 @@ License:	BSD
 Group:		System/Libraries
 URL:		http://www.monkey.org/~provos/libevent/
 Source0:	%{rname}-%{version}.tar.bz2
-BuildRoot:	%{_tmppath}/%{rname}-%{version}-root
 
 %description
 The libevent API provides a mechanism to execute a callback function
