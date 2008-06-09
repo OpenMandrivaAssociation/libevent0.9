@@ -80,9 +80,13 @@ install -m0644 libevent.a %{buildroot}%{_libdir}/libevent%{version}.a
 install -m0644 event.h %{buildroot}%{_includedir}/libevent%{version}.h
 install -m0644 event.3 %{buildroot}%{_mandir}/man3/libevent%{version}.3
 
+%if %mdkversion < 200900
 %post -n %{libname} -p /sbin/ldconfig
+%endif
 
+%if %mdkversion < 200900
 %postun -n %{libname} -p /sbin/ldconfig
+%endif
 
 %clean
 [ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
