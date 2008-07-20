@@ -8,12 +8,12 @@
 Summary:	Abstract asynchronous event notification library
 Name:		%{name}
 Version:	%{version}
-Release:	%mkrel 5
+Release:	%mkrel 6
 License:	BSD
 Group:		System/Libraries
 URL:		http://www.monkey.org/~provos/libevent/
 Source0:	%{rname}-%{version}.tar.bz2
-BuildRoot:	%{_tmppath}/%{rname}-%{version}-root
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 The libevent API provides a mechanism to execute a callback function
@@ -63,10 +63,11 @@ export CFLAGS="%{optflags} -fPIC"
 %configure2_5x
 %make libevent.a
 
-gcc -Wl,-soname,libevent%{version}.so.%{major} -shared %{optflags} -fPIC -o libevent%{version}.so.%{major}.%{version} *.o
+gcc -Wl,-soname,libevent%{version}.so.%{major} -shared %{optflags} -fPIC \
+    -Wl,--as-needed -Wl,--no-undefined -o libevent%{version}.so.%{major}.%{version} *.o
 
 %install
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
+rm -rf %{buildroot}
 
 install -d %{buildroot}%{_includedir}
 install -d %{buildroot}%{_libdir}
@@ -89,7 +90,7 @@ install -m0644 event.3 %{buildroot}%{_mandir}/man3/libevent%{version}.3
 %endif
 
 %clean
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
+rm -rf %{buildroot}
 
 %files -n %{libname}
 %defattr(-,root,root)
