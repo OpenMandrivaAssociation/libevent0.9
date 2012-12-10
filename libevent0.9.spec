@@ -102,3 +102,63 @@ rm -rf %{buildroot}
 %{_libdir}/*.so
 %{_libdir}/*.a
 %{_mandir}/man3/*
+
+
+%changelog
+* Fri Dec 10 2010 Oden Eriksson <oeriksson@mandriva.com> 0.9-8mdv2011.0
++ Revision: 620121
+- the mass rebuild of 2010.0 packages
+
+* Fri Sep 04 2009 Thierry Vignaud <tv@mandriva.org> 0.9-7mdv2010.0
++ Revision: 429728
+- rebuild
+
+* Sun Jul 20 2008 Oden Eriksson <oeriksson@mandriva.com> 0.9-6mdv2009.0
++ Revision: 238947
+- use -Wl,--as-needed -Wl,--no-undefined
+
+  + Pixel <pixel@mandriva.com>
+    - do not call ldconfig in %%post/%%postun, it is now handled by filetriggers
+
+* Wed Jan 02 2008 Olivier Blin <oblin@mandriva.com> 0.9-5mdv2008.1
++ Revision: 140921
+- restore BuildRoot
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+
+* Tue Sep 18 2007 Guillaume Rousse <guillomovitch@mandriva.org> 0.9-5mdv2008.0
++ Revision: 89834
+- rebuild
+
+* Sun Sep 09 2007 Oden Eriksson <oeriksson@mandriva.com> 0.9-4mdv2008.0
++ Revision: 83749
+- rebuild
+
+
+* Fri Dec 08 2006 Oden Eriksson <oeriksson@mandriva.com> 0.9-3mdv2007.0
++ Revision: 93712
+- Import libevent0.9
+
+* Fri Dec 08 2006 Oden Eriksson <oeriksson@mandriva.com> 0.9-3mdv2007.1
+- use the %%mkrel macro
+
+* Fri Feb 03 2006 Oden Eriksson <oeriksson@mandriva.com> 0.9-2mdk
+- rebuild
+
+* Mon Jan 17 2005 Oden Eriksson <oeriksson@mandrakesoft.com> 0.9-1mdk
+- readded under a new name
+
+* Sat Jul 31 2004 Oden Eriksson <oeriksson@mandrakesoft.com> 0.9-1mdk
+- 0.9
+- nuke redundant provides
+- misc spec file fixes
+
+* Mon May 03 2004 Oden Eriksson <oeriksson@mandrakesoft.com> 0.8-1mdk
+- 0.8
+- drop the patch, it's included
+- use the %%configure2_5x macro
+
+* Tue Feb 24 2004 Pascal Terjan <pterjan@mandrake.org> 0.6-5mdk
+- remove Obsoletes on current version
+
