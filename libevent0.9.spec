@@ -8,7 +8,7 @@
 Summary:	Abstract asynchronous event notification library
 Name:		%{name}
 Version:	%{version}
-Release:	%mkrel 8
+Release:	9
 License:	BSD
 Group:		System/Libraries
 URL:		http://www.monkey.org/~provos/libevent/
